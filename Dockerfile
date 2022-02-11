@@ -6,7 +6,7 @@ ADD ./custom-run.sh /custom-run.sh
 
 RUN apk update && \
     apk upgrade && \
-    apk add --no-cache git npm \
+    apk add --no-cache git npm nodejs \
     && git clone https://github.com/JamesOsgood/mongodb-grafana $GF_PATHS_PLUGINS/mongodb-grafana \
     && rm -rf $GF_PATHS_PLUGINS/mongodb-grafana\.git \
     && npm install --silent --prefix $GF_PATHS_PLUGINS/mongodb-grafana \
